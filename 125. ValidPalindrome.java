@@ -22,17 +22,19 @@ public class ValidPalindrome125 {
 
         while (start < end) {
 
-            while (!Character.isLetterOrDigit(s.charAt(start))) {
+            if (!Character.isLetterOrDigit(s.charAt(start))) {
                 start++;
             }
-            while (!Character.isLetterOrDigit(s.charAt(end))) {
+            else if (!Character.isLetterOrDigit(s.charAt(end))) {
                 end--;
             }
-            if (Character.toLowerCase(s.charAt(start))!=Character.toLowerCase(s.charAt(end))) {
-               return false;
+            else if (Character.toLowerCase(s.charAt(start))!=Character.toLowerCase(s.charAt(end))) {
+                return false;
             }
-               start++;
-               end--;
+            else{
+                start++;
+                end--;
+            }
 
         }
         return true;
